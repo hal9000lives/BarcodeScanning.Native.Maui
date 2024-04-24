@@ -44,9 +44,17 @@ namespace BarcodeScanning.Test
         private void CameraView_OnDetectionFinished(object sender, OnDetectionFinishedEventArg e)
         {
             _drawable.barcodeResults = e.BarcodeResults;
+            Console.WriteLine($"Barcode detected: {e.BarcodeResults.Length}");
+            if (e.BarcodeResults.Length > 0)
+            {
+                foreach (var barcode in e.BarcodeResults)
+                {
+                    Console.WriteLine($"Barcode: {barcode.RawValue}");
+                }
+            }
             Graphics.Invalidate();
         }
-        
+
         private async void BackButton_Clicked(object sender, EventArgs e)
         {
             await Shell.Current.GoToAsync("..");
@@ -87,7 +95,7 @@ namespace BarcodeScanning.Test
         private void Quality_SelectedIndexChanged(object sender, EventArgs e)
         {
             var picker = (Picker)sender;
-            if(picker.SelectedIndex > -1 && picker.SelectedIndex < 5)
+            if (picker.SelectedIndex > -1 && picker.SelectedIndex < 5)
                 Barcode.CaptureQuality = (CaptureQuality)picker.SelectedIndex;
         }
 
