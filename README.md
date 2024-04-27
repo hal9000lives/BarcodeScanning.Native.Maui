@@ -82,7 +82,7 @@ This library was inspired by existing MAUI barcode scanning libraries: [BarcodeS
     }
     ```
 7. As a best practice set the `CameraEnabled` property to `false` in `OnDisappearing()` method override in your ContentPage.
-8. From version 1.2.2 automatic disposing of `CameraView` is disabled! If a page gets regullary disposed, to prevent memory leaks add a listener to `Unloaded` event on your `ContentPage`. 
+8. From version 1.2.2 automatic disposing of `CameraView` is disabled! If a page gets regularly disposed, to prevent memory leaks add a listener to `Unloaded` event on your `ContentPage`. 
 
     **This mainly applies to a page registered as "details page" using `Routing.RegisterRoute()` method! Do not do this for pages registered in `AppShell.xaml` `<ShellContent .../>`, Shell Tabs or Flyout, or you will get a error when navigating back to the page!**
     
@@ -101,7 +101,7 @@ This library was inspired by existing MAUI barcode scanning libraries: [BarcodeS
         BarcodeView.Handler?.DisconnectHandler();
     }
     ```
-9. From wersion 1.5.0 set the `CaptureNextFrame` property to `true` to capture next frame from the camera feed as a `PlatformImage`. Listen to `OnImageCaptured` event or bind to `OnImageCapturedCommand` property to get the caputured image. **Image is captured from the original camera feed and can be different from the on-screen preview.** After the image is captured `CaptureNextFrame` property is automaticly set to `false` to prevent memory leaks. Example can be found in `ScanTab.xaml.cs`.
+9. From version 1.5.0 set the `CaptureNextFrame` property to `true` to capture next frame from the camera feed as a `PlatformImage`. Listen to `OnImageCaptured` event or bind to `OnImageCapturedCommand` property to get the caputured image. **Image is captured from the original camera feed and can be different from the on-screen preview.** After the image is captured `CaptureNextFrame` property is automaticly set to `false` to prevent memory leaks. Example can be found in `ScanTab.xaml.cs`.
 
 ## Supported barcode symbologies
 #### Android

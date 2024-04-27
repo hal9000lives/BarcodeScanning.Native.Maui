@@ -1,6 +1,6 @@
 ﻿namespace BarcodeScanning;
 
-public class BarcodeView : IDisposable
+public class BarcodeView : ContentView, IDisposable
 {
-    public void Dispose() => throw new NotImplementedException();
+    public void Dispose() {}
 }

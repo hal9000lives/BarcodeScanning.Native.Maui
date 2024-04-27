@@ -65,19 +65,20 @@ internal class CameraManager : IDisposable
 
         var layoutParams = new RelativeLayout.LayoutParams(LayoutParams.WrapContent, LayoutParams.WrapContent);
         layoutParams.AddRule(LayoutRules.CenterInParent);
-        var circleBitmap = Bitmap.CreateBitmap(2 * aimRadius, 2 * aimRadius, Bitmap.Config.Argb8888);
-        var canvas = new Canvas(circleBitmap);
-        canvas.DrawCircle(aimRadius, aimRadius, aimRadius, new Paint
-        {
-            AntiAlias = true,
-            Color = Color.Red,
-            Alpha = 150
-        }); 
-        _imageView = new ImageView(_context)
-        {
-            LayoutParameters = layoutParams
-        };
-        _imageView.SetImageBitmap(circleBitmap);
+        //var circleBitmap = Bitmap.CreateBitmap(2 * aimRadius, 2 * aimRadius, Bitmap.Config.Argb8888);
+        //var canvas = new Canvas(circleBitmap);
+        //canvas.DrawCircle(aimRadius, aimRadius, aimRadius, new Paint
+        //{
+        //    AntiAlias = true,
+        //    Color = Color.Transparent,
+        //    Alpha = 150,
+        //    StrokeWidth = 5
+        //});
+        //_imageView = new ImageView(_context)
+        //{
+        //    LayoutParameters = layoutParams
+        //};
+        //_imageView.SetImageBitmap(circleBitmap);
 
         _relativeLayout = new RelativeLayout(_context)
         {
@@ -210,10 +211,10 @@ internal class CameraManager : IDisposable
 
     internal void HandleAimMode()
     {
-        if (_cameraView?.AimMode ?? false)
-            _relativeLayout?.AddView(_imageView);
-        else
-            _relativeLayout?.RemoveView(_imageView);
+        //if (_cameraView?.AimMode ?? false)
+        //    _relativeLayout?.AddView(_imageView);
+        //else
+        //    _relativeLayout?.RemoveView(_imageView);
     }
 
     internal void HandleTapToFocus() 
