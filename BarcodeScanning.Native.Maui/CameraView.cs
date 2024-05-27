@@ -33,13 +33,12 @@ public partial class CameraView : View
         set => SetValue(OnImageCapturedCommandProperty, value);
     }
 
-    public static readonly BindableProperty VibrationOnDetectedProperty = BindableProperty.Create(
-        nameof(VibrationOnDetected),
-        typeof(bool),
-        typeof(CameraView),
-        true,
-        propertyChanged: (bindable, value, newValue) => ((CameraView)bindable).VibrationOnDetected = (bool)newValue);
-
+    public static readonly BindableProperty VibrationOnDetectedProperty = BindableProperty.Create(nameof(VibrationOnDetected)
+        , typeof(bool)
+        , typeof(CameraView)
+        , true
+        , BindingMode.TwoWay
+        , propertyChanged: (bindable, value, newValue) => ((CameraView)bindable).VibrationOnDetected = (bool)newValue);
     /// <summary>
     /// Disables or enables vibration on barcode detection.
     /// </summary>
@@ -49,13 +48,12 @@ public partial class CameraView : View
         set => SetValue(VibrationOnDetectedProperty, value);
     }
 
-    public static readonly BindableProperty CameraEnabledProperty = BindableProperty.Create(
-        nameof(CameraEnabled),
-        typeof(bool),
-        typeof(CameraView),
-        false,
-        propertyChanged: (bindable, value, newValue) => ((CameraView)bindable).CameraEnabled = (bool)newValue);
-
+    public static readonly BindableProperty CameraEnabledProperty = BindableProperty.Create(nameof(CameraEnabled)
+        , typeof(bool)
+        , typeof(CameraView)
+        , false
+        , BindingMode.TwoWay
+        , propertyChanged: (bindable, value, newValue) => ((CameraView)bindable).CameraEnabled = (bool)newValue);
     /// <summary>
     /// Disables or enables camera.
     /// </summary>
@@ -65,13 +63,12 @@ public partial class CameraView : View
         set => SetValue(CameraEnabledProperty, value);
     }
 
-    public static readonly BindableProperty PauseScanningProperty = BindableProperty.Create(
-        nameof(PauseScanning),
-        typeof(bool),
-        typeof(CameraView),
-        false,
-        propertyChanged: (bindable, value, newValue) => ((CameraView)bindable).PauseScanning = (bool)newValue);
-
+    public static readonly BindableProperty PauseScanningProperty = BindableProperty.Create(nameof(PauseScanning)
+        , typeof(bool)
+        , typeof(CameraView)
+        , false
+        , BindingMode.TwoWay
+        , propertyChanged: (bindable, value, newValue) => ((CameraView)bindable).PauseScanning = (bool)newValue);
     /// <summary>
     /// Pauses barcode scanning.
     /// </summary>
@@ -81,13 +78,12 @@ public partial class CameraView : View
         set => SetValue(PauseScanningProperty, value);
     }
 
-    public static readonly BindableProperty ForceInvertedProperty = BindableProperty.Create(
-        nameof(ForceInverted),
-        typeof(bool),
-        typeof(CameraView),
-        false,
-        propertyChanged: (bindable, value, newValue) => ((CameraView)bindable).ForceInverted = (bool)newValue);
-
+    public static readonly BindableProperty ForceInvertedProperty = BindableProperty.Create(nameof(ForceInverted)
+        , typeof(bool)
+        , typeof(CameraView)
+        , false
+        , BindingMode.TwoWay
+        , propertyChanged: (bindable, value, newValue) => ((CameraView)bindable).ForceInverted = (bool)newValue);
     /// <summary>
     /// Forces scanning of inverted barcodes. Reduces performance significantly. Android only.
     /// </summary>
@@ -97,13 +93,12 @@ public partial class CameraView : View
         set => SetValue(ForceInvertedProperty, value);
     }
 
-    public static readonly BindableProperty PoolingIntervalProperty = BindableProperty.Create(
-        nameof(PoolingInterval),
-        typeof(int),
-        typeof(CameraView),
-        0,
-        propertyChanged: (bindable, value, newValue) => ((CameraView)bindable).PoolingInterval = (int)newValue);
-
+    public static readonly BindableProperty PoolingIntervalProperty = BindableProperty.Create(nameof(PoolingInterval)
+        , typeof(int)
+        , typeof(CameraView)
+        , 0
+        , BindingMode.TwoWay
+        , propertyChanged: (bindable, value, newValue) => ((CameraView)bindable).PoolingInterval = (int)newValue);
     /// <summary>
     /// Enables pooling of detections for better detection of multiple barcodes at once. 
     /// Value in milliseconds. Default 0 (disabled).
@@ -114,13 +109,12 @@ public partial class CameraView : View
         set => SetValue(PoolingIntervalProperty, value);
     }
 
-    public static readonly BindableProperty TorchOnProperty = BindableProperty.Create(
-        nameof(TorchOn),
-        typeof(bool),
-        typeof(CameraView),
-        false,
-        propertyChanged: (bindable, value, newValue) => ((CameraView)bindable).TorchOn = (bool)newValue);
-
+    public static readonly BindableProperty TorchOnProperty = BindableProperty.Create(nameof(TorchOn)
+        , typeof(bool)
+        , typeof(CameraView)
+        , false
+        , BindingMode.TwoWay
+        , propertyChanged: (bindable, value, newValue) => ((CameraView)bindable).TorchOn = (bool)newValue);
     /// <summary>
     /// Disables or enables torch.
     /// </summary>
@@ -130,13 +124,12 @@ public partial class CameraView : View
         set => SetValue(TorchOnProperty, value);
     }
 
-    public static readonly BindableProperty TapToFocusEnabledProperty = BindableProperty.Create(
-        nameof(TapToFocusEnabled),
-        typeof(bool),
-        typeof(CameraView),
-        false,
-        propertyChanged: (bindable, value, newValue) => ((CameraView)bindable).TapToFocusEnabled = (bool)newValue);
-
+    public static readonly BindableProperty TapToFocusEnabledProperty = BindableProperty.Create(nameof(TapToFocusEnabled)
+        , typeof(bool)
+        , typeof(CameraView)
+        , false
+        , BindingMode.TwoWay
+        , propertyChanged: (bindable, value, newValue) => ((CameraView)bindable).TapToFocusEnabled = (bool)newValue);
     /// <summary>
     /// Disables or enables tap-to-focus.
     /// </summary>
@@ -146,13 +139,12 @@ public partial class CameraView : View
         set => SetValue(TapToFocusEnabledProperty, value);
     }
 
-    public static readonly BindableProperty CameraFacingProperty = BindableProperty.Create(
-        nameof(CameraFacing),
-        typeof(CameraFacing),
-        typeof(CameraView),
-        CameraFacing.Back,
-        propertyChanged: (bindable, value, newValue) => ((CameraView)bindable).CameraFacing = (CameraFacing)newValue);
-
+    public static readonly BindableProperty CameraFacingProperty = BindableProperty.Create(nameof(CameraFacing)
+        , typeof(CameraFacing)
+        , typeof(CameraView)
+        , CameraFacing.Back
+        , BindingMode.TwoWay
+        , propertyChanged: (bindable, value, newValue) => ((CameraView)bindable).CameraFacing = (CameraFacing)newValue);
     /// <summary>
     /// Select Back or Front camera.
     /// Default value is Back Camera.
@@ -163,13 +155,12 @@ public partial class CameraView : View
         set => SetValue(CameraFacingProperty, value);
     }
 
-    public static readonly BindableProperty CaptureQualityProperty = BindableProperty.Create(
-        nameof(CaptureQuality),
-        typeof(CaptureQuality),
-        typeof(CameraView),
-        CaptureQuality.Medium,
-        propertyChanged: (bindable, value, newValue) => ((CameraView)bindable).CaptureQuality = (CaptureQuality)newValue);
-
+    public static readonly BindableProperty CaptureQualityProperty = BindableProperty.Create(nameof(CaptureQuality)
+        , typeof(CaptureQuality)
+        , typeof(CameraView)
+        , CaptureQuality.Medium
+        , BindingMode.TwoWay
+        , propertyChanged: (bindable, value, newValue) => ((CameraView)bindable).CaptureQuality = (CaptureQuality)newValue);
     /// <summary>
     /// Set the capture quality for the image analysis.
     /// Recommended and default value is Medium.
@@ -181,13 +172,12 @@ public partial class CameraView : View
         set => SetValue(CaptureQualityProperty, value);
     }
 
-    public static readonly BindableProperty BarcodeSymbologiesProperty = BindableProperty.Create(
-        nameof(BarcodeSymbologies),
-        typeof(BarcodeFormats),
-        typeof(CameraView),
-        BarcodeFormats.All,
-        propertyChanged: (bindable, value, newValue) => ((CameraView)bindable).BarcodeSymbologies = (BarcodeFormats)newValue);
-
+    public static readonly BindableProperty BarcodeSymbologiesProperty = BindableProperty.Create(nameof(BarcodeSymbologies)
+        , typeof(BarcodeFormats)
+        , typeof(CameraView)
+        , BarcodeFormats.All
+        , BindingMode.TwoWay
+        , propertyChanged: (bindable, value, newValue) => ((CameraView)bindable).BarcodeSymbologies = (BarcodeFormats)newValue);
     /// <summary>
     /// Set the enabled symbologies.
     /// Default value All.
@@ -198,13 +188,12 @@ public partial class CameraView : View
         set => SetValue(BarcodeSymbologiesProperty, value);
     }
 
-    public static readonly BindableProperty AimModeProperty = BindableProperty.Create(
-        nameof(AimMode),
-        typeof(bool),
-        typeof(CameraView),
-        false,
-        propertyChanged: (bindable, value, newValue) => ((CameraView)bindable).AimMode = (bool)newValue);
-
+    public static readonly BindableProperty AimModeProperty = BindableProperty.Create(nameof(AimMode)
+        , typeof(bool)
+        , typeof(CameraView)
+        , false
+        , BindingMode.TwoWay
+        , propertyChanged: (bindable, value, newValue) => ((CameraView)bindable).AimMode = (bool)newValue);
     /// <summary>
     /// Disables or enables aim mode. When enabled only barcode that is in the center of the preview will be detected.
     /// </summary>
@@ -214,13 +203,12 @@ public partial class CameraView : View
         set => SetValue(AimModeProperty, value);
     }
 
-    public static readonly BindableProperty ViewfinderModeProperty = BindableProperty.Create(
-        nameof(ViewfinderMode),
-        typeof(bool),
-        typeof(CameraView),
-        false,
-        propertyChanged: (bindable, value, newValue) => ((CameraView)bindable).ViewfinderMode = (bool)newValue);
-
+    public static readonly BindableProperty ViewfinderModeProperty = BindableProperty.Create(nameof(ViewfinderMode)
+        , typeof(bool)
+        , typeof(CameraView)
+        , false
+        , BindingMode.TwoWay
+        , propertyChanged: (bindable, value, newValue) => ((CameraView)bindable).ViewfinderMode = (bool)newValue);
     /// <summary>
     /// Disables or enables viewfinder mode. When enabled only barcode that is visible in the preview will be detected.
     /// </summary>
@@ -247,14 +235,12 @@ public partial class CameraView : View
         set => SetValue(CaptureNextFrameProperty, value);
     }
 
-    public static readonly BindableProperty RequestZoomFactorProperty = BindableProperty.Create(
-        nameof(RequestZoomFactor),
-        typeof(float),
-        typeof(CameraView),
-        -1f,
-        defaultBindingMode: BindingMode.TwoWay,
-        propertyChanged: (bindable, value, newValue) => ((CameraView)bindable).RequestZoomFactor = (float)newValue);
-
+    public static readonly BindableProperty RequestZoomFactorProperty = BindableProperty.Create(nameof(RequestZoomFactor)
+        , typeof(float)
+        , typeof(CameraView)
+        , -1f
+        , BindingMode.TwoWay
+        , propertyChanged: (bindable, value, newValue) => ((CameraView)bindable).RequestZoomFactor = (float)newValue);
     /// <summary>
     /// Setting this value changes the zoom factor of the camera. Value has to be between MinZoomFactor and MaxZoomFactor.
     /// Changing the camera resets this value.
